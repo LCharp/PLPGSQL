@@ -1,5 +1,5 @@
-DROP FUNCTION  IF EXISTS  req8(varchar);
-CREATE FUNCTION req8(in col varchar) returns varchar  AS $$
+DROP FUNCTION  IF EXISTS tp3_req8a(varchar);
+CREATE FUNCTION tp3_req8a(in col varchar) returns varchar  AS $$
 declare 
 
 	curs refcursor;
@@ -28,4 +28,4 @@ BEGIN
 END
 $$ language plpgsql;
 
-select * from req8('login');
+select * from tp3_req8a('login');
