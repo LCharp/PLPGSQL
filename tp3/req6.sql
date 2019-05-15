@@ -1,5 +1,5 @@
-DROP FUNCTION  IF EXISTS  req6(varchar,varchar);
-CREATE FUNCTION req6(in ch varchar, in sep varchar) returns setof varchar  AS $$
+DROP FUNCTION  IF EXISTS tp3_req6(varchar,varchar);
+CREATE FUNCTION tp3_req6(in ch varchar, in sep varchar) returns setof varchar  AS $$
 declare 
 	pos integer;
 	l integer;
@@ -24,5 +24,5 @@ END
 $$ language plpgsql;
 
 
-select * from req6('____a_b_c_dd___','_');
+select * from tp3_req6('____a_b_c_dd___','_');
 
