@@ -1,26 +1,26 @@
 DROP  FUNCTION   IF EXISTS  tp4_req1() CASCADE;
-CREATE FUNCTION tp4_req1() returns TRIGGER  AS $$
-declare
+
+CREATE FUNCTION tp4_req1() RETURNS TRIGGER  AS $$
+DECLARE
 	curs refcursor;
 	l record;
 	t varchar;
 BEGIN
 	t:=lower(NEW.nom_theme);
-	open curs for select num_theme from t_theme
-	    where lower(nom_theme)=t;
-	fetch curs into l;
-	if found then
+	open curs for SELECT num_theme FROM t_theme WHERE lower(nom_theme)=t;
+	FETCH curs INTO l;
+	IF found THEN
 		raise exception 'Thème existant';
-		return null;
-	else
+		RETURN null;
+	ELSE
 		NEW.nom_theme:=t;
-		return NEW;
-	end if;
+		RETURN NEW;
+	END IF;
 END
 $$ language plpgsql;
 
-create trigger test_exo1 BEFORE INSERT ON t_theme
+CREATE TRIGGER test_exo1 BEFORE INSERT ON t_theme
      FOR EACH ROW
      EXECUTE PROCEDURE tp4_req1();
 
-insert into t_theme(nom_theme) values('C') returning nom_theme;
+INSERT INTO t_theme (nom_theme) VALUES ('E') RETURNING nom_theme;
