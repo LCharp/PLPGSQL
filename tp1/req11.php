@@ -1,6 +1,6 @@
 <?php
 
-$idc = pg_connect('host=localhost user=postgres password=postgres dbname=bd_charpentier');
+$idc = pg_connect('host= user= password= dbname=');
 $sql='select * from req8(5)';
 $rs=pg_exec($idc,$sql);
 $ligne=pg_fetch_assoc($rs);
