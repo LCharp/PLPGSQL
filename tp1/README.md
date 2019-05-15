@@ -199,30 +199,32 @@ select * from req8(5);
 
 ```php
 <?php
-$idc = pg_connect('host=localhost user=postgres password=postgres dbname=bd_charpentier');
-$sql='select * from date_fr()';
-$rs=pg_exec($idc,$sql);
-$ligne=pg_fetch_assoc($rs);
-/*
-foreach($ligne as $cle=>$valeur)
-{
-	print ($cle.' '.$valeur. 'fin<br />');
-}
- */
-print($ligne['date_fr']);
+	$idc = pg_connect('host=localhost user=postgres password=postgres dbname=bd_charpentier');
+	$sql='select * from date_fr()';
+	$rs=pg_exec($idc,$sql);
+	$ligne=pg_fetch_assoc($rs);
+	/*
+	foreach($ligne as $cle=>$valeur)
+	{
+		print ($cle.' '.$valeur. 'fin<br />');
+	}
+	 */
+	print($ligne['date_fr']);
+?>
 ```
 ###### Req 11:  ######
 
 ```php
 <?php
-$idc = pg_connect('host= user= password= dbname=');
-$sql='select * from req8(5)';
-$rs=pg_exec($idc,$sql);
-$ligne=pg_fetch_assoc($rs);
-while($ligne=pg_fetch_assoc($rs))
-{
- print ($ligne['req8'].'<br />');
-}
+	$idc = pg_connect('host= user= password= dbname=');
+	$sql='select * from req8(5)';
+	$rs=pg_exec($idc,$sql);
+	$ligne=pg_fetch_assoc($rs);
+	
+	while($ligne=pg_fetch_assoc($rs))
+	{
+		print ($ligne['req8'].'<br />');
+	}
 ?>
 ```
 
@@ -230,10 +232,11 @@ while($ligne=pg_fetch_assoc($rs))
 
 ```php
 <?php
-$idc = pg_connect('host=localhost user=postgres password=postgres dbname=bd_charpentier');
-$sql='select * from req9(5)';
-$rs=pg_exec($idc,$sql);
-$ligne=pg_fetch_assoc($rs);
- print ($ligne['req9']);
- ?>
+	$idc = pg_connect('host=localhost user=postgres password=postgres dbname=bd_charpentier');
+	$sql='select * from req9(5)';
+	$rs=pg_exec($idc,$sql);
+	$ligne=pg_fetch_assoc($rs);
+	
+	print ($ligne['req9']);
+?>
 ```
