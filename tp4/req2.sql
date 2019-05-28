@@ -14,7 +14,7 @@ BEGIN
 		RETURN null;
 	ELSE
 		NEW.nom_theme:=t;
-    NEW.nb_image=0;
+    	NEW.nb_image=0;
 		RETURN NEW;
 	END IF;
 END
